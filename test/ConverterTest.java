@@ -130,4 +130,9 @@ public class ConverterTest {
     public void romanToArabic3() {
         assertEquals(3, converter.romanToArabic("III"));
     }
+
+    @Test
+    public void romanToArabic4() {
+        assertEquals(4, converter.romanToArabic("IV"));
+    }
 }
