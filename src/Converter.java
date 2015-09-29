@@ -1,70 +1,40 @@
 public class Converter {
 
+    private static final String[] ones = {"I", "X", "C", "M"};
+    private static final String[] fives = {"V", "L", "D"};
+
     /**
      * Converts an Arabic number to a Roman Numeral.
      * @param arabicNumber - Arabic number to be converted.
      * @return - The Roman Numeral representation of the Arabic number.
      */
     public String arabicToRoman(int arabicNumber) {
-        return arabicToRomanTens(arabicNumber) + arabicToRomanOnes(arabicNumber);
-    }
-
-    /**
-     * Converts the tens column of an Arabic number to a Roman Numeral.
-     * @param arabicNumber - Arabic number to be converted.
-     * @return - The Roman Numeral representation of the tens column.
-     */
-    private String arabicToRomanTens(int arabicNumber) {
-        int arabicNumberTens = (arabicNumber % 100)/10; // We only care about the tens (intentionally dropping the ones)
         String roman = "";
-        if(arabicNumberTens == 4) {
-            roman = "XL";
-        }
-        else if(arabicNumberTens == 9) {
-            roman = "XC";
-        }
-        else {
-            int remaining = arabicNumberTens;
-            while(remaining > 0) {
-                if(remaining >= 5) {
-                    roman += "L";
-                    remaining -= 5;
-                }
-                else {
-                    roman += "X";
-                    remaining -= 1;
+        /* columnIndex values: 3=thousands, 2=hundreds, 1=tens, 0=ones. */
+        int lastIndex = Integer.toString(arabicNumber).toCharArray().length - 1;
+        int columnIndex = lastIndex;
+        while(columnIndex >= 0) {
+            int curDigit = Character.getNumericValue(Integer.toString(arabicNumber).toCharArray()[lastIndex - columnIndex]);
+            if(curDigit == 4) {
+                roman += ones[columnIndex] + fives[columnIndex];
+            }
+            else if(curDigit == 9) {
+                roman += ones[columnIndex] + ones[columnIndex+1];
+            }
+            else {
+                int remaining = curDigit;
+                while(remaining > 0) {
+                    if(remaining >= 5) {
+                        roman += fives[columnIndex];
+                        remaining -= 5;
+                    }
+                    else {
+                        roman += ones[columnIndex];
+                        remaining -= 1;
+                    }
                 }
             }
-        }
-        return roman;
-    }
-
-    /**
-     * Converts the ones column of an Arabic number to a Roman Numeral.
-     * @param arabicNumber - Arabic number to be converted.
-     * @return - The Roman Numeral representation of the ones column.
-     */
-    private String arabicToRomanOnes(int arabicNumber) {
-        int arabicNumberOnes = arabicNumber % 10;  // We only care about the ones column.
-        String roman = "";
-        if(arabicNumberOnes == 4) {
-            roman = "IV";
-        }
-        else if(arabicNumberOnes == 9) {
-            roman = "IX";
-        }
-        else {
-            int remaining = arabicNumberOnes;
-            while(remaining > 0) {
-                if(remaining >= 5) {
-                    roman += "V";
-                    remaining -= 5;
-                }
-                else {
-                    roman += "I";
-                    remaining -= 1;
-                }
-            }
+            columnIndex--;
         }
         return roman;
     }
