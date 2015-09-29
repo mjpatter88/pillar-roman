@@ -15,15 +15,16 @@ public class Converter {
      * @return - The Roman Numeral representation of the ones column.
      */
     private String arabicToRomanOnes(int arabicNumber) {
-        if(arabicNumber > 9 || arabicNumber < 0) {
-            throw new IllegalArgumentException(arabicNumber + "is out of range.");
-        }
+        int arabicNumberOnes = arabicNumber % 10;  // We only care about the ones column.
         String roman = "";
-        if(arabicNumber == 4) {
+        if(arabicNumberOnes == 4) {
             roman = "IV";
         }
+        else if(arabicNumberOnes == 9) {
+            roman = "IX";
+        }
         else {
-            int remaining = arabicNumber;
+            int remaining = arabicNumberOnes;
             while(remaining > 0) {
                 if(remaining >= 5) {
                     roman += "V";
