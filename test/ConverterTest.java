@@ -18,7 +18,7 @@ public class ConverterTest {
         converter = new Converter();
     }
 
-    /************************************** Ones Tests ****************************************************************/
+    /************************************** Arabic to Roman: Ones Tests ***********************************************/
     @Test
     public void arabicToRoman1() {
         assertEquals("I", converter.arabicToRoman(1));
@@ -44,7 +44,7 @@ public class ConverterTest {
         assertEquals("IX", converter.arabicToRoman(9));
     }
 
-    /***************************************** Tens Tests *************************************************************/
+    /***************************************** Arabic to Roman: Tens Tests ********************************************/
     @Test
     public void arabicToRoman12() {
         assertEquals("XII", converter.arabicToRoman(12));
@@ -70,7 +70,7 @@ public class ConverterTest {
         assertEquals("XC", converter.arabicToRoman(90));
     }
 
-    /******************************************* Hundreds Tests *******************************************************/
+    /******************************************* Arabic to Roman: Hundreds Tests **************************************/
     @Test
     public void arabicToRoman120() {
         assertEquals("CXX", converter.arabicToRoman(120));
@@ -96,7 +96,7 @@ public class ConverterTest {
         assertEquals("CM", converter.arabicToRoman(900));
     }
 
-    /******************************************* Thousands Tests ******************************************************/
+    /******************************************* Arabic to Roman: Thousands Tests *************************************/
     @Test
     public void arabicToRoman1066() {
         assertEquals("MLXVI", converter.arabicToRoman(1066));
@@ -107,7 +107,7 @@ public class ConverterTest {
         assertEquals("MCMLXXXIX", converter.arabicToRoman(1989));
     }
 
-    /******************************************* Illegal input Tests **************************************************/
+    /******************************************* Arabic to Roman: Illegal input Tests *********************************/
     @Test
     public void arabicToRomanNegative() {
         thrown.expect(IllegalArgumentException.class);
@@ -118,5 +118,11 @@ public class ConverterTest {
     public void arabicToRomanTooBig() {
         thrown.expect(IllegalArgumentException.class);
         converter.arabicToRoman(9000);
+    }
+
+    /************************************** Roman to Arabic: Ones Tests ***********************************************/
+    @Test
+    public void romanToArabic1() {
+        assertEquals(1, converter.romanToArabic("I"));
     }
 }

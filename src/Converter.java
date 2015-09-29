@@ -41,6 +41,15 @@ public class Converter {
         }
         return roman;
     }
+
+    /**
+     * Converts a Roman Numeral to an Arabic number.
+     * @param roman - Roman Numeral to be converted.
+     * @return - The Arabic number representation of the Roman Numeral.
+     */
+    public int romanToArabic(String roman) {
+        return 1;
+    }
 }
 
 
