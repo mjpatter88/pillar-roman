@@ -15,12 +15,17 @@ public class Converter {
      * @return - The Roman Numeral representation of the tens column.
      */
     private String arabicToRomanTens(int arabicNumber) {
-        int arabicNumberTens = arabicNumber % 100; // We only care about the tens (it's ok to keep the ones though)
+        int arabicNumberTens = (arabicNumber % 100)/10; // We only care about the tens (intentionally dropping the ones)
         String roman = "";
-        int remaining = arabicNumberTens;
-        while(remaining > 10) {
-            roman += "X";
-            remaining -= 10;
+        if(arabicNumberTens == 4) {
+            roman = "XL";
+        }
+        else {
+            int remaining = arabicNumberTens;
+            while(remaining > 0) {
+                roman += "X";
+                remaining -= 1;
+            }
         }
         return roman;
     }
