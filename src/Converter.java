@@ -48,7 +48,13 @@ public class Converter {
      * @return - The Arabic number representation of the Roman Numeral.
      */
     public int romanToArabic(String roman) {
-        return 1;
+        int arabic = 0;
+        for(int i=0; i<roman.length(); i++) {
+            arabic+=1;
+        }
+
+
+        return arabic;
     }
 }
 
