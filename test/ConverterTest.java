@@ -12,6 +12,8 @@ public class ConverterTest {
     public void setup() {
         converter = new Converter();
     }
+
+    /************************************** Ones Tests ****************************************************************/
     @Test
     public void arabicToRoman1() {
         assertEquals("I", converter.arabicToRoman(1));
@@ -37,6 +39,7 @@ public class ConverterTest {
         assertEquals("IX", converter.arabicToRoman(9));
     }
 
+    /***************************************** Tens Tests *************************************************************/
     @Test
     public void arabicToRoman12() {
         assertEquals("XII", converter.arabicToRoman(12));
@@ -61,4 +64,32 @@ public class ConverterTest {
     public void arabicToRoman90() {
         assertEquals("XC", converter.arabicToRoman(90));
     }
+
+    /******************************************* Hundreds Tests *******************************************************/
+    @Test
+    public void arabicToRoman120() {
+        assertEquals("CXX", converter.arabicToRoman(120));
+    }
+
+    @Test
+    public void arabicToRoman320() {
+        assertEquals("CCCXX", converter.arabicToRoman(320));
+    }
+
+    @Test
+    public void arabicToRoman440() {
+        assertEquals("CDXL", converter.arabicToRoman(440));
+    }
+
+    @Test
+    public void arabicToRoman660() {
+        assertEquals("DCLX", converter.arabicToRoman(660));
+    }
+
+    @Test
+    public void arabicToRoman900() {
+        assertEquals("CM", converter.arabicToRoman(900));
+    }
+    /******************************************* Thousands Tests ******************************************************/
+    /******************************************* Illegal input Tests **************************************************/
 }
