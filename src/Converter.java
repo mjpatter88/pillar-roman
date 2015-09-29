@@ -5,7 +5,7 @@ public class Converter {
 
     /**
      * Converts an Arabic number to a Roman Numeral.
-     * @param arabicNumber - Arabic number to be converted.
+     * @param arabicNumber - Arabic number to be converted. Must be between 0 and 3999.
      * @return - The Roman Numeral representation of the Arabic number.
      */
     public String arabicToRoman(int arabicNumber) {
