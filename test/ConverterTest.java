@@ -113,4 +113,10 @@ public class ConverterTest {
         thrown.expect(IllegalArgumentException.class);
         converter.arabicToRoman(-5);
     }
+
+    @Test
+    public void arabicToRomanTooBig() {
+        thrown.expect(IllegalArgumentException.class);
+        converter.arabicToRoman(9000);
+    }
 }
