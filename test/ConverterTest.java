@@ -145,4 +145,30 @@ public class ConverterTest {
     public void romanToArabic9() {
         assertEquals(9, converter.romanToArabic("IX"));
     }
+
+    /***************************************** Arabic to Roman: Tens Tests ********************************************/
+    @Test
+    public void romanToArabic12() {
+        assertEquals(12, converter.romanToArabic("XII"));
+    }
+
+    @Test
+    public void romanToArabic32() {
+        assertEquals(32, converter.romanToArabic("XXXII"));
+    }
+
+    @Test
+    public void romanToArabic44() {
+        assertEquals(44, converter.romanToArabic("XLIV"));
+    }
+
+    @Test
+    public void romanToArabic66() {
+        assertEquals(66, converter.romanToArabic("LXVI"));
+    }
+
+    @Test
+    public void romanToArabic90() {
+        assertEquals(90, converter.romanToArabic("XC"));
+    }
 }
