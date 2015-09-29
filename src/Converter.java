@@ -30,8 +30,10 @@ public class Converter {
                     roman += "L";
                     remaining -= 5;
                 }
-                roman += "X";
-                remaining -= 1;
+                else {
+                    roman += "X";
+                    remaining -= 1;
+                }
             }
         }
         return roman;
@@ -67,3 +69,6 @@ public class Converter {
         return roman;
     }
 }
+
+
+
