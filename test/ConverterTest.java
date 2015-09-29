@@ -16,4 +16,10 @@ public class ConverterTest {
         Converter converter = new Converter();
         assertEquals("III", converter.arabicToRoman(3));
     }
+
+    @Test
+    public void arabicToRomanFour() {
+        Converter converter = new Converter();
+        assertEquals("IV", converter.arabicToRoman(4));
+    }
 }
