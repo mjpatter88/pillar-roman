@@ -26,4 +26,9 @@ public class ConverterTest {
     public void arabicToRomanFour() {
         assertEquals("IV", converter.arabicToRoman(4));
     }
+
+    @Test
+    public void arabicToRomanSix() {
+        assertEquals("VI", converter.arabicToRoman(6));
+    }
 }

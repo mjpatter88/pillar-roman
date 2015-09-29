@@ -25,8 +25,14 @@ public class Converter {
         else {
             int remaining = arabicNumber;
             while(remaining > 0) {
-                roman += "I";
-                remaining -= 1;
+                if(remaining >= 5) {
+                    roman += "V";
+                    remaining -= 5;
+                }
+                else {
+                    roman += "I";
+                    remaining -= 1;
+                }
             }
         }
         return roman;
