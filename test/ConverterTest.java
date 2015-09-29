@@ -1,4 +1,3 @@
-import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -196,5 +195,16 @@ public class ConverterTest {
     @Test
     public void romanToArabic900() {
         assertEquals(900, converter.romanToArabic("CM"));
+    }
+
+    /******************************************* Roman to Arabic: Thousands Tests *************************************/
+    @Test
+    public void romanToArabic1066() {
+        assertEquals(1066, converter.romanToArabic("MLXVI"));
+    }
+
+    @Test
+    public void romanToArabic1989() {
+        assertEquals(1989, converter.romanToArabic("MCMLXXXIX"));
     }
 }
