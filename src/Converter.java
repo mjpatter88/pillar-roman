@@ -9,6 +9,9 @@ public class Converter {
      * @return - The Roman Numeral representation of the Arabic number.
      */
     public String arabicToRoman(int arabicNumber) {
+        if(arabicNumber < 0 || arabicNumber > 3999) {
+            throw new IllegalArgumentException("Number must be between 0 and 3999.");
+        }
         String roman = "";
         /* columnIndex values: 3=thousands, 2=hundreds, 1=tens, 0=ones. */
         int lastIndex = Integer.toString(arabicNumber).toCharArray().length - 1;
