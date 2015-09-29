@@ -90,6 +90,17 @@ public class ConverterTest {
     public void arabicToRoman900() {
         assertEquals("CM", converter.arabicToRoman(900));
     }
+
     /******************************************* Thousands Tests ******************************************************/
+    @Test
+    public void arabicToRoman1066() {
+        assertEquals("MLXVI", converter.arabicToRoman(1066));
+    }
+
+    @Test
+    public void arabicToRoman1989() {
+        assertEquals("MCMLXXXIX", converter.arabicToRoman(1989));
+    }
+
     /******************************************* Illegal input Tests **************************************************/
 }
