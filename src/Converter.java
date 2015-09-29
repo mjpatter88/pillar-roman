@@ -20,6 +20,9 @@ public class Converter {
         if(arabicNumberTens == 4) {
             roman = "XL";
         }
+        else if(arabicNumberTens == 9) {
+            roman = "XC";
+        }
         else {
             int remaining = arabicNumberTens;
             while(remaining > 0) {

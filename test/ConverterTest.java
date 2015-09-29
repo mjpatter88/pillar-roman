@@ -56,4 +56,9 @@ public class ConverterTest {
     public void arabicToRoman66() {
         assertEquals("LXVI", converter.arabicToRoman(66));
     }
+
+    @Test
+    public void arabicToRoman90() {
+        assertEquals("XC", converter.arabicToRoman(90));
+    }
 }
