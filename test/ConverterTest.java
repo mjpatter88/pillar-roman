@@ -1,25 +1,29 @@
 import junit.framework.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 
 
 public class ConverterTest {
+    Converter converter;
+
+    @Before
+    public void setup() {
+        converter = new Converter();
+    }
     @Test
     public void arabicToRomanOne() {
-        Converter converter = new Converter();
         assertEquals("I", converter.arabicToRoman(1));
     }
 
     @Test
     public void arabicToRomanThree() {
-        Converter converter = new Converter();
         assertEquals("III", converter.arabicToRoman(3));
     }
 
     @Test
     public void arabicToRomanFour() {
-        Converter converter = new Converter();
         assertEquals("IV", converter.arabicToRoman(4));
     }
 }
