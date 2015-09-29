@@ -23,6 +23,10 @@ public class Converter {
         else {
             int remaining = arabicNumberTens;
             while(remaining > 0) {
+                if(remaining >= 5) {
+                    roman += "L";
+                    remaining -= 5;
+                }
                 roman += "X";
                 remaining -= 1;
             }
