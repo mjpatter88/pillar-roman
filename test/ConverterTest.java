@@ -146,7 +146,7 @@ public class ConverterTest {
         assertEquals(9, converter.romanToArabic("IX"));
     }
 
-    /***************************************** Arabic to Roman: Tens Tests ********************************************/
+    /***************************************** Roman to Arabic: Tens Tests ********************************************/
     @Test
     public void romanToArabic12() {
         assertEquals(12, converter.romanToArabic("XII"));
@@ -170,5 +170,31 @@ public class ConverterTest {
     @Test
     public void romanToArabic90() {
         assertEquals(90, converter.romanToArabic("XC"));
+    }
+
+    /******************************************* Roman to Arabic: Hundreds Tests **************************************/
+    @Test
+    public void romanToArabic120() {
+        assertEquals(120, converter.romanToArabic("CXX"));
+    }
+
+    @Test
+    public void romanToArabic320() {
+        assertEquals(320, converter.romanToArabic("CCCXX"));
+    }
+
+    @Test
+    public void romanToArabic440() {
+        assertEquals(440, converter.romanToArabic("CDXL"));
+    }
+
+    @Test
+    public void romanToArabic660() {
+        assertEquals(660, converter.romanToArabic("DCLX"));
+    }
+
+    @Test
+    public void romanToArabic900() {
+        assertEquals(900, converter.romanToArabic("CM"));
     }
 }

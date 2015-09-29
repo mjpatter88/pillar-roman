@@ -73,8 +73,6 @@ public class Converter {
                 arabic += mapping.get(roman.charAt(i));
             }
         }
-
-
         return arabic;
     }
 }
