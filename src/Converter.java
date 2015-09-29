@@ -9,6 +9,11 @@ public class Converter {
         return arabicToRomanTens(arabicNumber) + arabicToRomanOnes(arabicNumber);
     }
 
+    /**
+     * Converts the tens column of an Arabic number to a Roman Numeral.
+     * @param arabicNumber - Arabic number to be converted.
+     * @return - The Roman Numeral representation of the tens column.
+     */
     private String arabicToRomanTens(int arabicNumber) {
         int arabicNumberTens = arabicNumber % 100; // We only care about the tens (it's ok to keep the ones though)
         String roman = "";
@@ -22,7 +27,7 @@ public class Converter {
 
     /**
      * Converts the ones column of an Arabic number to a Roman Numeral.
-     * @param arabicNumber - Arabic Number to be converted.
+     * @param arabicNumber - Arabic number to be converted.
      * @return - The Roman Numeral representation of the ones column.
      */
     private String arabicToRomanOnes(int arabicNumber) {
