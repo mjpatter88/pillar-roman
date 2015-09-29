@@ -13,27 +13,32 @@ public class ConverterTest {
         converter = new Converter();
     }
     @Test
-    public void arabicToRomanOne() {
+    public void arabicToRoman1() {
         assertEquals("I", converter.arabicToRoman(1));
     }
 
     @Test
-    public void arabicToRomanThree() {
+    public void arabicToRoman3() {
         assertEquals("III", converter.arabicToRoman(3));
     }
 
     @Test
-    public void arabicToRomanFour() {
+    public void arabicToRoman4() {
         assertEquals("IV", converter.arabicToRoman(4));
     }
 
     @Test
-    public void arabicToRomanSix() {
+    public void arabicToRoman6() {
         assertEquals("VI", converter.arabicToRoman(6));
     }
 
     @Test
-    public void arabicToRomanNine() {
+    public void arabicToRoman9() {
         assertEquals("IX", converter.arabicToRoman(9));
+    }
+
+    @Test
+    public void arabicToRoman12() {
+        assertEquals("XII", converter.arabicToRoman(12));
     }
 }

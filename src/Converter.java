@@ -6,7 +6,18 @@ public class Converter {
      * @return - The Roman Numeral representation of the Arabic number.
      */
     public String arabicToRoman(int arabicNumber) {
-        return arabicToRomanOnes(arabicNumber);
+        return arabicToRomanTens(arabicNumber) + arabicToRomanOnes(arabicNumber);
+    }
+
+    private String arabicToRomanTens(int arabicNumber) {
+        int arabicNumberTens = arabicNumber % 100; // We only care about the tens (it's ok to keep the ones though)
+        String roman = "";
+        int remaining = arabicNumberTens;
+        while(remaining > 10) {
+            roman += "X";
+            remaining -= 10;
+        }
+        return roman;
     }
 
     /**
